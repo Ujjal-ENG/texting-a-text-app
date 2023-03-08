@@ -12,6 +12,10 @@ const TextForm = (props) => {
         toggle ? setText(text.toUpperCase()) : setText(text.toLowerCase());
     };
 
+    const handleClickSpaces = () => {
+        setText(text.replace(/\s+/g, ' '));
+    };
+
     return (
         <>
             <div className="container mt-4">
@@ -25,6 +29,10 @@ const TextForm = (props) => {
 
                 <button className="btn btn-primary mx-1" onClick={handleClickUP}>
                     {toggle ? 'Convert to UpperCase' : 'Convert to LowerCase'}
+                </button>
+
+                <button className="btn btn-primary mx-1" onClick={handleClickSpaces}>
+                    Remove Extra Spaces!!
                 </button>
             </div>
 
