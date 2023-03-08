@@ -26,7 +26,7 @@ const TextForm = (props) => {
                         Write your text here
                     </label>
                     <textarea
-                        style={{ backgroundColor: `${props.mode === 'light' ? 'light' : 'gray'}`, color: `${props.mode === 'light' ? 'black' : 'white'}` }}
+                        style={{ backgroundColor: `${props.mode === 'light' ? 'white' : 'gray'}`, color: `${props.mode === 'light' ? 'black' : 'white'}` }}
                         className="form-control"
                         id="myBox"
                         rows="8"
