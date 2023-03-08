@@ -1,14 +1,15 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = (props) => {
     return (
         <div>
             <nav className={`navbar navbar-expand-lg  bg-${props.mode} navbar-${props.mode}`}>
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="/">
+                    <Link className="navbar-brand nav-link" href="/">
                         TextIng
-                    </a>
+                    </Link>
                     <button
                         className="navbar-toggler"
                         type="button"
@@ -22,14 +23,14 @@ const Navbar = (props) => {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="/">
-                                    Home
-                                </a>
+                                <Link to="/" className="nav-link active" aria-current="page">
+                                    Home{' '}
+                                </Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/about">
+                                <Link to="/about" className="nav-link active" aria-current="page">
                                     About
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                         {/* <form className="d-flex" role="search">
