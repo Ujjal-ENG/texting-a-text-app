@@ -1,21 +1,17 @@
 import React, { useState } from 'react';
 
 const TextForm = (props) => {
-    const [text, setText] = useState('Enter text here');
+    const [text, setText] = useState('');
+    const [toggle, setToggle] = useState(true);
     const handleChange = (e) => {
         setText(e.target.value);
     };
 
-    let buttonClicked = true;
     const handleClickUP = () => {
-        if (buttonClicked) {
-            setText(text.toUpperCase());
-            buttonClicked = false;
-        } else {
-            setText(text.toLowerCase());
-            // buttonClicked = true;
-        }
+        setToggle(!toggle);
+        toggle ? setText(text.toUpperCase()) : setText(text.toLowerCase());
     };
+
     return (
         <>
             <div className="container mt-4">
@@ -26,8 +22,9 @@ const TextForm = (props) => {
                     </label>
                     <textarea className="form-control" id="myBox" rows="8" value={text} onChange={handleChange}></textarea>
                 </div>
-                <button className="btn btn-primary" onClick={handleClickUP}>
-                    {'Convert to UpperCase'}
+
+                <button className="btn btn-primary mx-1" onClick={handleClickUP}>
+                    {toggle ? 'Convert to UpperCase' : 'Convert to LowerCase'}
                 </button>
             </div>
 
@@ -37,6 +34,8 @@ const TextForm = (props) => {
                 <h4>
                     {text.split(' ').length} words and {text.trim().length} characters without space!!
                 </h4>
+
+                <h5>Your average time to read {(0.008 * text.trim().length).toFixed(2)} Minutes</h5>
             </div>
         </>
     );
