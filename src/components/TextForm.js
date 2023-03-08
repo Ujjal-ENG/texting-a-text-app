@@ -21,7 +21,7 @@ const TextForm = (props) => {
         <>
             <div className="container mt-4">
                 <h1 className="text-center">{props.heading}</h1>
-                <div className="mb-3">
+                <div className={`mb-3 text-${props.mode === 'light' ? 'dark' : 'light'}`}>
                     <label htmlFor="myBox" className="form-label">
                         Write your text here
                     </label>
