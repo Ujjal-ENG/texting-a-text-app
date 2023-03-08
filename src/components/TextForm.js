@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import TextAction from './TextAction';
 
 const TextForm = (props) => {
     const [text, setText] = useState('');
@@ -26,25 +27,9 @@ const TextForm = (props) => {
                     </label>
                     <textarea className="form-control" id="myBox" rows="8" value={text} onChange={handleChange}></textarea>
                 </div>
-
-                <button className="btn btn-primary mx-1" onClick={handleClickUP}>
-                    {toggle ? 'Convert to UpperCase' : 'Convert to LowerCase'}
-                </button>
-
-                <button className="btn btn-primary mx-1" onClick={handleClickSpaces}>
-                    Remove Extra Spaces!!
-                </button>
             </div>
 
-            {/* text summary */}
-            <div className="container mt-5">
-                <h3>Your Text Summary</h3>
-                <h4>
-                    {text.split(' ').length} words and {text.trim().length} characters without space!!
-                </h4>
-
-                <h5>Your average time to read {(0.008 * text.trim().length).toFixed(2)} Minutes</h5>
-            </div>
+            <TextAction text={text} handleChange={handleChange} handleClickUP={handleClickUP} handleClickSpaces={handleClickSpaces} toggle={toggle} />
         </>
     );
 };
