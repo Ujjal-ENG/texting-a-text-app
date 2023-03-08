@@ -25,7 +25,13 @@ const TextForm = (props) => {
                     <label htmlFor="myBox" className="form-label">
                         Write your text here
                     </label>
-                    <textarea className="form-control" id="myBox" rows="8" value={text} onChange={handleChange}></textarea>
+                    <textarea
+                        style={{ backgroundColor: `${props.mode === 'light' ? 'light' : 'gray'}`, color: `${props.mode === 'light' ? 'black' : 'white'}` }}
+                        className="form-control"
+                        id="myBox"
+                        rows="8"
+                        value={text}
+                        onChange={handleChange}></textarea>
                 </div>
             </div>
 
