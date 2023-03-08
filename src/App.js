@@ -21,8 +21,8 @@ const App = () => {
         <>
             <Navbar mode={mode} toggleMode={toggleMode} />
             <Routes>
-                <Route path="/" element={<TextForm heading="Enter the text to analyze below" mode={mode} />} />
-                <Route path="/about" element={<About />} />
+                <Route exact path="/" element={<TextForm heading="Enter the text to analyze below" mode={mode} />} />
+                <Route exact path="/about" element={<About />} />
             </Routes>
         </>
     );
